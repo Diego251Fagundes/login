@@ -3,7 +3,7 @@
 		xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <body>
 	<header class="topbar" th:fragment="topbar(mostrarVoltar)">
-		<a class="brand" th:href="@{/}" aria-label="SIGEE - página inicial">SIGEE</a>
+		<a class="brand" th:href="@{/}" aria-label="Página inicial" th:text="${nomeAplicacao}">Login Seguro</a>
 		<div class="account-actions">
 			<span class="account-name" sec:authentication="name"></span>
 			<a class="button button-secondary" th:if="${mostrarVoltar}" th:href="@{/}">Voltar ao início</a>

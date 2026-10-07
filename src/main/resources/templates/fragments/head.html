@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(titulo, estilo)">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title th:text="${titulo + ' | ' + nomeAplicacao}">Login Seguro</title>
+	<!-- O tema fornece as variaveis CSS; o estilo define o layout da pagina. -->
+	<link rel="stylesheet" th:href="@{${temaCss}}">
+	<link rel="stylesheet" th:href="@{${estilo}}">
+</head>
+</html>

@@ -8,11 +8,11 @@
 		<version>4.0.8</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.com.sigee</groupId>
-	<artifactId>sigee-login</artifactId>
+	<groupId>br.com.loginseguro</groupId>
+	<artifactId>login-seguro</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name/>
-	<description/>
+	<name>Login Seguro</name>
+	<description>Sistema genérico de autenticação e autorização com Spring Boot e MongoDB Atlas.</description>
 	<url/>
 	<licenses>
 		<license/>

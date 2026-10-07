@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-BR" xmlns:th="http://www.thymeleaf.org"
 		xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Inicio | SIGEE</title>
-	<link rel="stylesheet" th:href="@{/css/theme.css}">
-	<link rel="stylesheet" th:href="@{/css/app.css}">
-</head>
+<head th:replace="~{fragments/head :: head('Início', '/css/app.css')}"></head>
 <body>
 	<header th:replace="~{fragments/topbar :: topbar(false)}"></header>
 
 	<main class="page page-narrow">
 		<section class="page-heading" aria-labelledby="titulo-pagina">
-			<p class="eyebrow">Sistema Integrado de Gestao de Equipamentos Escolares</p>
-			<h1 id="titulo-pagina">Pagina inicial</h1>
-			<p>Autenticacao concluida. Utilize as opcoes disponiveis para o seu perfil.</p>
+			<p class="eyebrow">Sua conta</p>
+			<h1 id="titulo-pagina">Página inicial</h1>
+			<p>Login realizado. Escolha uma das opções disponíveis para o seu perfil.</p>
 		</section>
 
 		<section class="card" sec:authorize="hasRole('ADMINISTRADOR')">
-			<h2>Administracao de usuarios</h2>
-			<p>Cadastre contas e atribua um dos tres perfis funcionais permitidos.</p>
-			<a class="button button-primary" th:href="@{/admin/usuarios/cadastro}">Cadastrar usuario</a>
+			<h2>Administração de usuários</h2>
+			<p>Cadastre contas e defina o perfil de acesso de cada usuário.</p>
+			<a class="button button-primary" th:href="@{/admin/usuarios/cadastro}">Cadastrar usuário</a>
+		</section>
+		<section class="card" sec:authorize="hasRole('OPERADOR')">
+			<h2>Perfil Operador</h2>
+			<p>Acesse a página disponível para o seu perfil.</p>
+			<a class="button button-primary" th:href="@{/operador/inicio}">Acessar área do Operador</a>
+		</section>
+		<section class="card" sec:authorize="hasRole('PROFESSOR')">
+			<h2>Perfil Professor</h2>
+			<p>Acesse a página disponível para o seu perfil.</p>
+			<a class="button button-primary" th:href="@{/professor/inicio}">Acessar área do Professor</a>
 		</section>
 	</main>
 </body>

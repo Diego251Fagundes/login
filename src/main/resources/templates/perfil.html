@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('Área do perfil', '/css/app.css')}"></head>
+<body>
+	<header th:replace="~{fragments/topbar :: topbar(true)}"></header>
+	<main class="page page-narrow">
+		<section class="page-heading" aria-labelledby="titulo-pagina">
+			<p class="eyebrow">Acesso autorizado</p>
+			<h1 id="titulo-pagina" th:text="${'Área do ' + perfil}">Área do perfil</h1>
+			<p>Esta página está disponível para o seu perfil de acesso.</p>
+		</section>
+		<section class="card">
+			<h2>Sua conta</h2>
+			<p>Você está conectado e pode voltar à página inicial ou sair pelo menu superior.</p>
+			<a class="button button-primary" th:href="@{/}">Voltar ao início</a>
+		</section>
+	</main>
+</body>
+</html>
